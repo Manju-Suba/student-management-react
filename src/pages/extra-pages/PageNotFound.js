@@ -12,7 +12,7 @@ const PageNotFound = () => {
   };
 
   const handleLoginClick = () => {
-    window.location.href = '/asset_management_react/'; // Redirect to an expired page
+    window.location.href = '/'; // Redirect to an expired page
     return null;
   };
 

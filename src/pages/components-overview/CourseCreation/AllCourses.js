@@ -35,7 +35,7 @@ const AllCourses = () => {
 	const [pageSize, setPageSize] = useState(10);
 	const queryParams = new URLSearchParams(location.search);
 	const AllCourse = useSelector((state) => state.CourseCreationData );
-	const AssetListcount = useSelector(
+	const Listcount = useSelector(
 		(state) => state.CourseCreationData && state.CourseCreationData.Course && state.CourseCreationData.Course.assetTicketCount
 	);
 	const [loading, setLoading] = useState(false);
@@ -253,27 +253,6 @@ const AllCourses = () => {
 			<Container maxWidth="xl" sx={{ height: 'auto', width: '100%', bgcolor: '#fff', mt: 0.5, border: 'none', mr: 0 }}>
 				<Toolbar disableGutters sx={{ height: '50%' }}>
 					<Grid item container spacing={2} columns={16}>
-						{/* <Grid item lg={3} sm={5}>
-							<TextField
-								name="asset"
-								type={'text'}
-								placeholder="search "
-								className="search-input-bg"
-								sx={{ border: 'none' }}
-								InputProps={{
-									style: { width: '100%', height: '33px', color: '#C7C7C7', bgcolor: '#FBFBFB' },
-									startAdornment: (
-										<IconButton aria-label="Toggle password visibility" edge="start">
-											<SearchSharpIcon sx={{ color: '#C7C7C7', fontSize: '18px', fontWeight: '700' }} />
-										</IconButton>
-									)
-								}}
-								value={searchValue.current}
-								onChange={handleSearchChange}
-							/>
-						</Grid> */}
-
-
 						<Grid item lg={16} sm={16}>
 							<Box display="flex" justifyContent="flex-end">
 								<Button
@@ -300,7 +279,7 @@ const AllCourses = () => {
 			<div className="align-center-data">
 				<Pagination
 					defaultCurrent={pageNo}
-					total={AssetListcount}
+					total={Listcount}
 					current={pageNo}
 					pageSize={pageSize}
 					onChange={getpagerecord}

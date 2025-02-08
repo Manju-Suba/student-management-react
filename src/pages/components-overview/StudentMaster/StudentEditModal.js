@@ -74,7 +74,7 @@ const StudentEditModal = ({ editStudent, StatusType, isEditModalOpen, setIsEditM
 
 	return (
 		<Modal
-			title={'Asset Ticket ' + StatusType}
+			title={'Student Edit Form'}
 			open={isEditModalOpen}
 			okText="Update"
 			onOk={handleOk}

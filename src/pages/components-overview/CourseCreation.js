@@ -1,6 +1,5 @@
 import { Card } from '../../../node_modules/@mui/material/index';
 import AllCourses from './CourseCreation/AllCourses';
-// import Assetlistheader from './Assetlist/Assetlistheader';
 import ComponentSkeleton from './ComponentSkeleton';
 
 const CourseCreation = () => {

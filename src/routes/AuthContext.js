@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useMemo } from 'react';
 import { useCookies } from 'react-cookie';
 import axiosInstance from '../constants/Global';
 import { jwtDecode } from 'jwt-decode';
-import { PERMISSIONS, API_AUTH_URL, ROLE_LIST } from '../constants/constants';
+import { API_AUTH_URL } from '../constants/constants';
 import axios from 'axios';
 
 const AuthContext = createContext();
@@ -26,28 +26,7 @@ export const AuthProvider = ({ children }) => {
       if (response.status == 200 ) {
         setUser({
           username: username,
-          // permissions: [
-          //   PERMISSIONS.CAN_VIEW_DASHBOARD,
-          //   PERMISSIONS.CAN_VIEW_ASSET_LIST,
-          //   // PERMISSIONS.CAN_VIEW_ASSET_ALLOCATION,
-          //   // PERMISSIONS.CAN_VIEW_ASSET_TRANSFER,
-          //   // PERMISSIONS.CAN_VIEW_MASTER,
-          //   // PERMISSIONS.CAN_VIEW_ASSET_AUDIT,
-          //   // PERMISSIONS.CAN_VIEW_DISPOSED_AUDIT,
-          //   // PERMISSIONS.CAN_VIEW_REPORT
-          // ]
         });
-        // setCookie('permissions', [
-        //   PERMISSIONS.CAN_VIEW_DASHBOARD,
-        //   PERMISSIONS.CAN_VIEW_ASSET_LIST,
-        //   // PERMISSIONS.CAN_VIEW_ASSET_ALLOCATION,
-        //   // PERMISSIONS.CAN_VIEW_ASSET_TRANSFER,
-        //   // PERMISSIONS.CAN_VIEW_MASTER,
-        //   // PERMISSIONS.CAN_VIEW_ASSET_AUDIT,
-        //   // PERMISSIONS.CAN_VIEW_DISPOSED_AUDIT,
-        //   // PERMISSIONS.CAN_VIEW_REPORT,
-        //   // PERMISSIONS.CAN_VIEW_PROFILE
-        // ]);
       }else{
         throw new Error('Login failed');
       }
